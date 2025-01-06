@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculator2 {
-    private static ArrayList<Integer> list = new ArrayList<>();
+    private static ArrayList<Double> list = new ArrayList<>(); // 결과값 저장용 컬렉션필드
     static Scanner sc = new Scanner(System.in);
-    static int[] twoNums = new int[2];
+    static int[] twoNums = new int[2];  //양의 정수 2개 받는 배열
 
     public static void sum(int a, int b) {
         nums(a, b);
-        list.add(a + b);
+        list.add((double)a + b);
         System.out.println(a + b);
     }
 
     public static void minus(int a, int b) {
         nums(a, b);
-        list.add(a - b);
+        list.add((double)a - b);
         System.out.println(a - b);
     }
 
@@ -26,17 +26,17 @@ public class Calculator2 {
             System.out.println("나누기에서 분모가 0이 될 수 없음");
             return;
         }
-        list.add (a / b);
+        list.add ((double)a / b);
         System.out.println(a / (double)b);
     }
 
     public static void times(int a, int b) {
         nums(a, b);
-        list.add(a * b);
+        list.add((double)a * b);
         System.out.println(a * b);
     }
 
-    private static void nums(int a, int b) {
+    private static void nums(int a, int b) {    //양의 정수 판별 메소드
         if (a < 0 || b < 0) {
             System.out.println("양의 정수만 입력해주세요");
             inputNums();
@@ -82,13 +82,13 @@ public class Calculator2 {
                     inputNums();
     }
 
-    public static ArrayList<Integer> getList(){
-        System.out.println("연산했던 결과들");
+    public static ArrayList<Double> getList(){ // 연산 결과 출력 메소드
+        System.out.print("연산했던 결과들 : ");
         return list;
     }
 
-    public static ArrayList<Integer> delete(){
-        System.out.println("첫번째 데이터 삭제");
+    public static ArrayList<Double> delete(){  //연산 결과 첫번째값 삭제 메소드
+        System.out.print("첫번째 데이터 삭제 후 결과 : ");
         list.remove(0);
         return list;
     }
