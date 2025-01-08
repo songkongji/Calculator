@@ -9,20 +9,16 @@ public class Calculator2 {
     static int[] twoNums = new int[2];  //양의 정수 2개 받는 배열
 
     public static void sum(int a, int b) {
-        nums(a, b);
         list.add((double)a + b);
         System.out.println(a + b);
     }
 
     public static void minus(int a, int b) {
-        nums(a, b);
         list.add((double)a - b);
         System.out.println(a - b);
     }
 
-    public static void division(int a, int b) {
-        nums(a, b);
-        if (b == 0) {
+    public static void division(int a, int b) {if (b == 0) {
             System.out.println("나누기에서 분모가 0이 될 수 없음");
             return;
         }
@@ -31,7 +27,6 @@ public class Calculator2 {
     }
 
     public static void times(int a, int b) {
-        nums(a, b);
         list.add((double)a * b);
         System.out.println(a * b);
     }
