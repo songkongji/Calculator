@@ -72,14 +72,36 @@ public class Calculator2 {
                 System.out.println("잘못된 기호를 입력했습니다.");
                 break;
         }
+
+        System.out.println("정보를 수정하려면 아무키나 입력 (원하지 않을시 n 입력)");
+        if(!sc.next().equals("n"))
+            setList();
+
+        System.out.println(getList());
+
         System.out.println("계속 하시려면 아무키나 입력 (종료를 원할 시 exit 입력)");
                 if(!sc.next().equals("exit"))
                     inputNums();
     }
 
-    public static ArrayList<Double> getList(){ // 연산 결과 출력 메소드
+    private static ArrayList<Double> getList(){ // 연산 결과 출력 메서드
         System.out.print("연산했던 결과들 : ");
         return list;
+    }
+
+    private static void setList(){ //연산 결과 수정 메서드
+        System.out.print("수정하실 숫자의 위치를 입력 (첫번째부터 1, 2...) : ");
+        int inputNum = sc.nextInt();
+        while(true) {
+            if (inputNum > list.size()) {
+                System.out.println("위치가 잘못됐습니다. 다시 입력하세요");
+                inputNum = sc.nextInt();
+            } else
+                break;
+        }
+        System.out.print("변경되는 숫자를 입력 : ");
+        int inputNum2 = sc.nextInt();
+        list.set(inputNum - 1, (double) inputNum2);
     }
 
     public static ArrayList<Double> delete(){  //연산 결과 첫번째값 삭제 메소드
