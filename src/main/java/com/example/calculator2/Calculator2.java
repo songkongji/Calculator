@@ -31,9 +31,10 @@ public class Calculator2 {
         System.out.println(a * b);
     }
 
-    private static void nums(int a, int b) {    //양의 정수 판별 메소드
-        if (a < 0 || b < 0) {
-            System.out.println("양의 정수만 입력해주세요");
+    private static void nums(int a, int b) {    //양의 정수임과 숫자 2개인지 판별하는 메소드
+        String str = sc.nextLine();
+        if (a < 0 || b < 0 || str != null) {
+            System.out.println("양의 정수가 아니거나 숫자를 3개 이상 입력하셨습니다.");
             inputNums();
         }
     }
